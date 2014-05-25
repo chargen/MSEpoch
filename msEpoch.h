@@ -1,6 +1,13 @@
+
+#if defined(_WIN32)
+    // TODO include windows based headers
+#else
+    #include <sys/time.h>
+#endif
+
 unsigned long long MSEpoch()
 {
-#if defined(WIN32) || defined(WIN64)
+#if defined(_WIN32)
     
 	FILETIME ft;
 	GetSystemTimeAsFileTime(&ft);
