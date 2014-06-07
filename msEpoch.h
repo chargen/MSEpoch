@@ -1,11 +1,16 @@
 
+#ifndef __MSEPOCH_H__
+#define __MSEPOCH_H__
+
 #if defined(_WIN32)
     // TODO include windows based headers
 #else
     #include <sys/time.h>
 #endif
 
-unsigned long long MSEpoch()
+
+// TODO move into c++ file so I don't need to keep it inline
+inline unsigned long long MSEpoch()
 {
 #if defined(_WIN32)
     
@@ -37,3 +42,5 @@ unsigned long long MSEpoch()
     
 #endif
 }
+
+#endif
